@@ -1,2 +1,22 @@
-<h1>Demos#modal</h1>
-<p>Find me in app/views/demos/modal.html.erb</p>
+<div data-controller="modal" class="text-center" style="padding-top: 250px;">
+  <!-- ボダン -->
+  <button type="button" class="btn btn-primary" data-action="click->modal#open">
+    モーダルを開く
+  </button>
+
+  <!-- 背景 -->
+  <div data-modal-target="background" 
+       data-action="click->modal#closeOnBackground"
+       class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"
+       style="z-index: 99999;">
+    <!-- モーダル本体 -->
+    <div data-modal-target="modal" class="d-none position-fixed top-50 start-50 translate-middle bg-white p-3" style="z-index: 100000;">
+      <h5>モーダルタイトル</h5>
+      <p>ここにモーダルの内容が表示されます</p>
+
+      <button type="button" class="btn btn-secondary" data-action="click->modal#close">
+        閉じる
+      </button>
+    </div>
+  </div>
+</div>
