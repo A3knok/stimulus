@@ -4,5 +4,14 @@
 
 import { application } from "./application"
 
+import DynamicSelectController from "./dynamic_select_controller"
+application.register("dynamic-select", DynamicSelectController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
+import ToggleController from "./toggle_controller"
+application.register("toggle", ToggleController)

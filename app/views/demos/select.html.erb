@@ -1,0 +1,32 @@
+<div class="bg-secondary" style="height: 100vh;">
+  <div data-controller="dynamic-select" class="mx-auto text-center m-5 p-5" style="max-width: 500px;">
+    <!-- 親のセレクトボックス -->
+    <select data-dynamic-select-target="parent"
+            data-action="change->dynamic-select#updateChild"
+            class="form-select mb-5">
+      <option value="">カテゴリー選択してください</option>
+      <option value="fruits">果物</option>
+      <option value="vegetables">野菜</option>
+    </select>
+
+    <!-- 子のセレクトボックス -->
+    <select data-dynamic-select-target="child" class="form-select">
+      <option value="">まずはカテゴリーを選択してください</option>
+    </select>
+
+    <div data-dynamic-select-target="data" class="d-none">
+      <%= {
+        fruits: [
+          { value: "apple", text: "りんご" },
+          { value: "banana", text: "ばなな" },
+          { value: "orange", text: "オレンジ" }
+        ],
+        vegetables: [
+          { value: "carrot", text: "にんじん"},
+          { value: "potato", text: "じゃがいも" },
+          { value: "onion", text: "玉ねぎ" }
+        ]
+      }.to_json.html_safe %>
+    </div>
+  </div>
+</div>
